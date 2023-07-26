@@ -33,7 +33,7 @@ module.exports.validatorCreateCardMovie = celebrate({
     image: Joi.string().required().regex(REGEX_URL),
     trailerLink: Joi.string().required().regex(REGEX_URL),
     thumbnail: Joi.string().required().regex(REGEX_URL),
-    movieId: Joi.number().required(),
+    id: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
   }),
@@ -41,6 +41,6 @@ module.exports.validatorCreateCardMovie = celebrate({
 
 module.exports.validatorDeleteMovie = celebrate({
   params: Joi.object().keys({
-    movieId: Joi.string().required().hex().length(24),
+    _id: Joi.string().required().hex().length(24),
   }),
 });
