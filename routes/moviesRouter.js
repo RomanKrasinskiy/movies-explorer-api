@@ -5,6 +5,6 @@ const { getUserMovies, createCardMovie, deleteMovie } = require('../controllers/
 
 router.get('/', getUserMovies);
 router.post('/', validatorCreateCardMovie, createCardMovie);
-router.delete('/:movieId', validatorDeleteMovie, deleteMovie);
+router.delete('/:_id', validatorDeleteMovie, deleteMovie);
 
 module.exports = router;
