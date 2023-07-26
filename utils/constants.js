@@ -8,8 +8,8 @@ const options = {
     'https://localhost:3000',
     'http://localhost:3001',
     'https://localhost:3001',
-    'http://mymesto.nomoredomains.monster', //
-    'https://mymesto.nomoredomains.monster', //
+    'http://kinomovies.nomoreparties.sbs',
+    'https://kinomovies.nomoreparties.sbs',
   ],
   methods: ['GET', 'PUT', 'HEAD', 'PATCH', 'POST', 'DELETE'],
   preflightContinue: false,
