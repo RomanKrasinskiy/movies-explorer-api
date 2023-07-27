@@ -4,7 +4,7 @@ const { validatorSignUp, validatorSignIn } = require('../middlewares/validators'
 const usersRouter = require('./usersRouter');
 const moviesRouter = require('./moviesRouter');
 const { createUser, login, signout } = require('../controllers/users');
-const { auth } = require('../middlewares/auth');
+const auth = require('../middlewares/auth');
 const NotFoundError = require('../answersServer/customsErrors/NotFoundError');
 
 router.post('/signup', validatorSignUp, createUser);

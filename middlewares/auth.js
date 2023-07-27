@@ -6,7 +6,7 @@ const { JWT_SECRET_DEV } = require('../utils/constants');
 
 const auth = (req, res, next) => {
   let payload;
-  const { token } = req.cookies.jwt;
+  const token = req.cookies.jwt;
   if (!token) {
     next(new UnauthorizedError('Необходимо авторизоваться'));
     return;
