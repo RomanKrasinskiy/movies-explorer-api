@@ -1,6 +1,6 @@
 const REGEX_URL = /https?:\/\/w{0,3}?[a-z0-9-]{1,}\..+#?/i;
 
-const { PORT = 3001, MONGODB_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
+const { PORT = 3000, MONGODB_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
 const JWT_SECRET_DEV = 'secret-key';
 const options = {
   origin: [
@@ -12,10 +12,10 @@ const options = {
     'https://kinomovies.nomoreparties.sbs',
   ],
   methods: ['GET', 'PUT', 'HEAD', 'PATCH', 'POST', 'DELETE'],
-  // preflightContinue: false,
+  preflightContinue: false,
   optionsSuccessStatus: 204,
   credentials: true,
-  allowedHeaders: ['Content-Type', 'origin', 'Authorization', 'Access-Control-Allow-Origin'],
+  allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
 };
 
 module.exports = {
