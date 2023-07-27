@@ -11,7 +11,6 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routes = require('./routes/index');
 const { PORT, MONGODB_URL } = require('./utils/constants');
 
-mongoose.set('strictQuery', true);
 const app = express();
 
 const options = {
