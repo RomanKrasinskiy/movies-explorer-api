@@ -33,12 +33,12 @@ const options = {
 
 app.use('*', cors(options));
 
-mongoose.connect(MONGODB_URL, { useNewUrlParser: true });
 app.use(express.json());
 app.use(cookieParser());
 app.use(requestLogger);
 app.use(helmet());
 app.use(limiter);
+mongoose.connect(MONGODB_URL, { useNewUrlParser: true });
 app.use(routes);
 app.use(errorLogger);
 app.use(errors());

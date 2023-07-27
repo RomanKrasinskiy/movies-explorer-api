@@ -98,6 +98,7 @@ const login = (req, res, next) => {
         { expiresIn: '7d' },
       );
       return res
+        .status(OK)
         .cookie('jwt', token, {
           maxAge: 3600000 * 24 * 7,
           httpOnly: true,
