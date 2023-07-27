@@ -52,8 +52,8 @@ const movieSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
-  movieId: {
-    type: String, // Возможно будет такой вид  type: mongoose.Schema.Types.ObjectId,
+  id: {
+    type: Number,
     required: true,
   },
   nameRU: {

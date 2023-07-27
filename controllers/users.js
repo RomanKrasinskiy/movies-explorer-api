@@ -99,8 +99,10 @@ const login = (req, res, next) => {
       );
       return res
         .cookie('jwt', token, {
-          maxAge: 3600000 * 24 * 365,
+          maxAge: 3600000 * 24 * 7,
           httpOnly: true,
+          // secure: true,
+          // sameSite: 'none',
         })
       // аутентификация успешна
         .send({ token });
