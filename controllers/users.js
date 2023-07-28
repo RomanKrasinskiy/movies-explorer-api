@@ -99,9 +99,9 @@ const login = (req, res, next) => {
       );
       return res
         .cookie('jwt', token, {
-          maxAge: 3600000 * 24 * 365,
+          maxAge: 3600000 * 24 * 7,
           httpOnly: true,
-          sameSite: false,
+          sameSite: 'none',
           secure: true,
         })
       // аутентификация успешна
@@ -112,7 +112,10 @@ const login = (req, res, next) => {
 
 const signout = (req, res, next) => {
   try {
-    res.status(OK).clearCookie('jwt').send({ message: 'Вы разлогинились!' });
+    res.status(OK).clearCookie('jwt', {
+      sameSite: 'none',
+      secure: true,
+    }).send({ message: 'Вы разлогинились!' });
   } catch (err) {
     next(err);
   }
