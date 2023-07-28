@@ -112,7 +112,10 @@ const login = (req, res, next) => {
 
 const signout = (req, res, next) => {
   try {
-    res.status(OK).clearCookie('jwt').send({ message: 'Вы разлогинились!' });
+    res.status(OK).clearCookie('jwt', {
+      sameSite: 'none',
+      secure: true,
+    }).send({ message: 'Вы разлогинились!' });
   } catch (err) {
     next(err);
   }
